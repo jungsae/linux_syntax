@@ -94,4 +94,24 @@ for i in {1..100}; do
     echo "Hello World$i"
 done
 
-# find
+# grep
+grep [옵션][패턴][파일명/디렉토리]
+-r 옵션: 디렉토리 내 모든 파일에서 검색 (recursive)
+-i 옵션: 대소문자 구분 없이 검색 (ignore-case)
+-n 옵션: 라인수 출력 (line-number)
+e.g. grep -rin "hello" mydir
+    hello 문자열을 라인수와 함께 mydir폴더에서 대소문자 구분 없이 검색
+
+# grep + find
+find [경로][옵션][행동]
+-name 옵션: 파일명으로 검색
+-type 옵션: 타입으로 검색(f는 파일, d는 디렉토리)
+-exec, {}, \
+    exec: find로 찾은 결과에 대해 실행 명령.
+    {}: find로 찾은 대상이 담기는 공간을 의미
+    \: exec의 종료지점
+e.g.
+    find = 파일을 찾는 명령
+    find ./ -name "*.txt"
+    find ./ -name "*.txt" \ xargs grep -rni "hello"
+    find ./ -name "*.txt" -exec cp -r {} ./testFolder/\;

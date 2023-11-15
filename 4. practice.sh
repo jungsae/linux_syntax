@@ -1,4 +1,4 @@
-# 1
+# 1 
 echo "Start"
 
 cd
@@ -18,9 +18,19 @@ for i in {1..100}; do
 echo "Done"
 
 # 2
-echo "script start"
-for i in {1..100};
-do
+echo "practice3 start"
+
+cd
+
+mkdir mydir3
+cd mydir3
+
+for i in {1..100}; do
     touch "file$i.txt"
+    
+    for j in {1..100}; do
+        echo "hello world from file$i" >> "file$i.txt"
+    done
 done
-echo "script end"
+
+echo "practice complete"
