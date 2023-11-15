@@ -79,3 +79,19 @@ tail -n 파일명
 
 # cd -
 이전 폴더로 돌아가기
+
+# 쉘 제어문(if)
+if[condition]; then
+    echo "hello world"
+elif[condition]; then
+    echo "~~~~~"
+else
+    echo "~~"
+fi
+
+# for 반복문
+for i in {1..100}; do
+    echo "Hello World$i"
+done
+
+# find
