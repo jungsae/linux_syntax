@@ -115,3 +115,4 @@ e.g.
     find ./ -name "*.txt"
     find ./ -name "*.txt" \ xargs grep -rni "hello"
     find ./ -name "*.txt" -exec cp -r {} ./testFolder/\;
+    find ./ -name "*.txt" -exec grep -rni "hello" {} \; -exec cp -r {} testFolder \;
